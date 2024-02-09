@@ -82,6 +82,7 @@ jobs:
         with:
           inlineScript: |
             echo Setting SCM_DO_BUILD_DURING_DEPLOYMENT=false on app service azurechat-webapp-7nk5sqokh364q
+            az account set --subscription da7ad5a6-0ab8-4934-a5f9-fe591504393c
             az webapp config appsettings set -n azurechat-webapp-7nk5sqokh364q -g rg-azure-chat --settings SCM_DO_BUILD_DURING_DEPLOYMENT=false -o none
             echo Setting --startup-file=\"node server.js\" on app service azurechat-webapp-7nk5sqokh364q
             az webapp config set --startup-file="node server.js" -n azurechat-webapp-7nk5sqokh364q -g rg-azure-chat -o none
